@@ -1,0 +1,2 @@
+*.log
+/etc/NetworkManager/system-connections/bond_backup
