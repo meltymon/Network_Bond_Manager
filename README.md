@@ -111,6 +111,7 @@ BOND_MIIMON="100"
 # --- Tools ---
 SPEEDTEST_TOOL="speedtest-cli"
 SPEEDTEST_SERVER_IDS=""
+```
 ## 📜 Changelog / Versionsverlauf
 
 ### Version 5.4 (Aktuell)
