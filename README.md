@@ -33,6 +33,109 @@ Der **Universal Network Bond Manager** bietet folgende Hauptfunktionen über ein
 
 ### 1. Klonen des Repositorys
 
-```bash
+```
 git clone [https://github.com/meltymon/Network_Bond_Manager.git](https://github.com/meltymon/Network_Bond_Manager.git)
 cd Network_Bond_Manager
+```
+
+💡 Hinweis: Stellen Sie sicher, dass Git auf Ihrem System installiert ist.
+### 2. Berechtigungen setzen und Start
+
+Da das Skript systemweite Änderungen an der Netzwerkkonfiguration vornimmt (über `nmcli`), muss es mit **Root-Rechten (`sudo`)** ausgeführt werden.
+
+Stellen Sie zunächst die Ausführungsberechtigung sicher:
+```
+chmod +x main.sh
+```
+
+Anschließend starten Sie das interaktive Tool:
+
+```
+sudo ./main.sh
+```
+⚠️ Wichtig: Dieses Skript wurde für Systeme entwickelt, die den NetworkManager (mit nmcli) verwenden.
+
+## 📂 Projektstruktur
+
+Das Projekt wurde vollständig **modularisiert** (Separation of Concerns) in dedizierte Ordner und Dateien, um die Wartbarkeit und Erweiterbarkeit zu maximieren.
+
+| Datei / Ordner | Zweck | Details |
+| :--- | :--- | :--- |
+| `main.sh` | **Einstiegspunkt** | Lädt alle Konfigurationen und Funktionen und enthält die Haupt-Menüschleife. |
+| `config.sh` | **Globale Variablen** | Enthält alle konfigurierbaren Variablen wie `IP_ADDRESS`, `PRIMARY_SLAVE`, `SPEEDTEST_SERVER_IDS`. |
+| **`funcs/`** | **Funktionsbibliothek** | Beinhaltet alle modularen Skriptteile (Kernlogik, Menüsteuerung, Tools). |
+| `funcs/funcs_utils.sh` | Utilities | Enthält Hilfsfunktionen wie das **Übersetzungstool `tr()`**, `show_menu` und das **Backup/Restore-System**. |
+| `funcs/funcs_core.sh` | Kernlogik | Enthält die kritischen Funktionen zur **Bonding-Steuerung** (`activate_bonding`, `deactivate_bonding`, etc.). |
+| `funcs/funcs_menu.sh` | Menü-Logik | Verwaltet die Benutzeroberfläche und die Erfassung der Konfigurationsparameter (z.B. Adapterauswahl). |
+| `funcs/funcs_tools.sh` | Tool-Funktionen | Implementiert Diagnose- und Verwaltungstools (`run_speedtest`, `manage_packages`). |
+| **`langs/`** | **Sprachdateien** | Enthält alle Text-Arrays für die Lokalisierung. |
+| `langs/lang_de.sh` | Deutsch (DE) | Enthält alle deutschen Übersetzungen. |
+| `langs/lang_en.sh` | Englisch (EN) | Enthält alle englischen Übersetzungen. |
+
+## 📜 Changelog / Versionsverlauf
+
+### Version 5.4 (Aktuell)
+
+* **Versionsnummer:** 5.4
+* **Status:** Stabile, modularisierte Version.
+* **Neu:** Vollständiges **Refactoring und Modularisierung** des gesamten Skripts in dedizierte `funcs/` und `langs/` Ordner.
+* **Fix:** Fehlerbehebung der `read -rp` Prompts in der Paketverwaltung für eine korrekte, sprachabhängige Ausgabe.
+* **Status:** Erfolgreicher initialer Commit und Push auf GitHub abgeschlossen.
+
+### Version 5.0
+
+* **Versionsnummer:** 5.0
+* **Neu:** Einführung der **Backup- und Restore-Funktionen** für NetworkManager-Profile zur Gewährleistung der Rückwärtskompatibilität.
+* **Neu:** Erstmalige Implementierung des **NMCLI-Backends** für die persistente Bond-Erstellung.
+* **Neu:** Erkennung des System-Paketmanagers (`apt`, `pacman` etc.) implementiert.
+
+### Version 3.1
+
+* **Versionsnummer:** 3.1
+* **Neu:** Implementierung der **Notfall-Reparatur (`Emergency Repair`)** Funktion zur aggressiven Rücksetzung der Adapter auf DHCP-Profile.
+* **Fix:** Verbesserung der Adapter-Auswahllogik, um nur physische Ethernet-Adapter anzuzeigen.
+
+### Version 2.0
+
+* **Versionsnummer:** 2.0
+* **Neu:** Einführung eines **interaktiven Menüsystems** anstelle einfacher Kommandozeilen-Argumente.
+* **Neu:** Implementierung der **Basis-Bonding-Funktionalität** im Active-Backup-Modus.
+* **Neu:** Erste Implementierung der **Diagnose- und Statusprüfung**.
+
+### Version 1.0 (Initial Release)
+
+* **Versionsnummer:** 1.0
+* **Neu:** Erstellung der ersten rudimentären **Bash-Skript-Logik** zur Konfiguration von Netzwerk-Bonds über die Konfigurationsdateien (Legacy-Methode).
+* **Neu:** Definition der globalen Variablen (`BOND_IFACE`, `PRIMARY_SLAVE`).
+
+---
+
+## 🤝 Mitwirken (Contributing)
+
+Beiträge zur Verbesserung dieses Projekts sind herzlich willkommen! 
+
+[Image of GitHub Pull Request workflow]
+
+
+1.  **Forken** Sie das Repository.
+2.  Erstellen Sie einen neuen Branch für Ihre Funktion:
+    ```bash
+    git checkout -b feature/IhreFunktion
+    ```
+3.  Committen Sie Ihre Änderungen:
+    ```bash
+    git commit -m 'feat: Neue Funktion hinzugefügt'
+    ```
+4.  Pushen Sie den Branch:
+    ```bash
+    git push origin feature/IhreFunktion
+    ```
+5.  Erstellen Sie einen **Pull Request**.
+
+---
+
+## ⚖️ Lizenz
+
+Dieses Projekt steht unter der **GNU General Public License v3.0 (GPLv3)**. Dies ist eine Copyleft-Lizenz, die sicherstellt, dass die Freiheit des Codes für alle Benutzer erhalten bleibt.
+
+Details finden Sie in der [LICENSE](LICENSE)-Datei.
