@@ -1,6 +1,7 @@
 ---
 [![Deutsche Version](https://img.shields.io/badge/Sprache-Deutsch-blue)](README.md)
-## 🇬🇧 Englische README.md (Für `README_EN.md`)
+[![English Version](https://img.shields.io/badge/Language-English-blue.svg)](README_EN.md)
+## 🇬🇧 English README.md 
 
 ```
 # 💻 Universal Network Bond Manager
