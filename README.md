@@ -1,6 +1,6 @@
 # 💻 Universal Network Bond Manager
 
-[![GitHub license](https://img.shields.io/github/license/meltymon/Network_Bond_Manager.svg)](https://github.com/meltymon/Network_Bond_Manager/blob/main/LICENSE)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 [![GitHub stars](https://img.shields.io/github/stars/meltymon/Network_Bond_Manager.svg?style=social)](https://github.com/meltymon/Network_Bond_Manager/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/meltymon/Network_Bond_Manager.svg?style=social)](https://github.com/meltymon/Network_Bond_Manager/network/members)
 
