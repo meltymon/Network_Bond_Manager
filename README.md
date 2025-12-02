@@ -136,6 +136,4 @@ Beiträge zur Verbesserung dieses Projekts sind herzlich willkommen!
 
 ## ⚖️ Lizenz
 
-Dieses Projekt steht unter der **GNU General Public License v3.0 (GPLv3)**. Dies ist eine Copyleft-Lizenz, die sicherstellt, dass die Freiheit des Codes für alle Benutzer erhalten bleibt.
-
-Details finden Sie in der [LICENSE](LICENSE)-Datei.
+Dieses Projekt steht unter der **MIT License**. Details finden Sie in der [LICENSE](LICENSE)-Datei.
