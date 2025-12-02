@@ -72,6 +72,45 @@ Das Projekt wurde vollständig **modularisiert** (Separation of Concerns) in ded
 | `langs/lang_de.sh` | Deutsch (DE) | Enthält alle deutschen Übersetzungen. |
 | `langs/lang_en.sh` | Englisch (EN) | Enthält alle englischen Übersetzungen. |
 
+## 🛠️ Konfigurationsdetails (`config.sh`)
+
+Die Datei **`config.sh`** ist das zentrale Element zur Anpassung des Skriptverhaltens. Viele dieser Variablen können auch über das Menü (Option 7) zur Laufzeit geändert werden.
+
+| Variable | Standardwert | Beschreibung |
+| :--- | :--- | :--- |
+| `BOND_IFACE` | `"bond0"` | Der **Name des Bond-Masters**, der erstellt wird. |
+| `BOND_MODE` | `"active-backup"` | Der **Bonding-Modus** (wird im Skript auf `active-backup` fest codiert). |
+| `PRIMARY_SLAVE` | `""` | Definiert den **bevorzugten (aktiven) Slave** im Active-Backup-Modus. Leer lassen für automatische Auswahl. |
+| `SLAVES` | `()` | Ein **Array** der physischen Netzwerknamen (`eth0`, `enp1s0`, etc.), die gebondet werden sollen. |
+| `IP_ADDRESS` | `""` | Die **statische IP-Adresse** (z.B. `192.168.1.100/24`) für die Bond-Schnittstelle. |
+| `GATEWAY` | `""` | Der Standard-Gateway. |
+| `DNS_SERVERS` | `""` | Komma-getrennte Liste der DNS-Server (z.B. `"8.8.8.8,8.8.4.4"`). |
+| `BOND_MIIMON` | `"100"` | Intervall zur **Link-Überwachung** in Millisekunden. |
+| `SPEEDTEST_TOOL` | `"speedtest-cli"` | Das zu verwendende Speedtest-Programm. |
+| `SPEEDTEST_SERVER_IDS` | `""` | **Manuelle ID** des Servers für konsistente Geschwindigkeitstests. |
+
+### ✏️ Beispiel (`config.sh`)
+
+Ein Konfigurationsbeispiel, um die Adapter `eth0` und `eth1` mit einer statischen IP zu bonden:
+
+```
+#!/bin/bash
+
+# --- Netzwerk Konfiguration ---
+BOND_IFACE="bond0"
+PRIMARY_SLAVE="eth0"
+SLAVES=("eth0" "eth1") 
+IP_ADDRESS="192.168.10.50/24"
+GATEWAY="192.168.10.1"
+DNS_SERVERS="8.8.8.8,1.1.1.1"
+
+# --- Bonding Parameter ---
+BOND_MODE="active-backup"
+BOND_MIIMON="100"
+
+# --- Tools ---
+SPEEDTEST_TOOL="speedtest-cli"
+SPEEDTEST_SERVER_IDS=""
 ## 📜 Changelog / Versionsverlauf
 
 ### Version 5.4 (Aktuell)
