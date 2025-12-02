@@ -176,4 +176,6 @@ Beiträge zur Verbesserung dieses Projekts sind herzlich willkommen!
 
 ## ⚖️ Lizenz
 
-Dieses Projekt steht unter der **MIT License**. Details finden Sie in der [LICENSE](LICENSE)-Datei.
+Dieses Projekt steht unter der **MIT License**. Diese permissive Lizenz erlaubt eine breite Nutzung und Weitergabe des Codes.
+
+Details finden Sie in der [LICENSE](LICENSE)-Datei.
