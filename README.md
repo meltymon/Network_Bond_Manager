@@ -4,6 +4,8 @@
 [![GitHub stars](https://img.shields.io/github/stars/meltymon/Network_Bond_Manager.svg?style=social)](https://github.com/meltymon/Network_Bond_Manager/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/meltymon/Network_Bond_Manager.svg?style=social)](https://github.com/meltymon/Network_Bond_Manager/network/members)
 
+[![English Version](https://img.shields.io/badge/Language-English-blue.svg)](README_EN.md)
+
 Ein robustes und interaktives Bash-Skript zur einfachen Verwaltung von **Network Bonding (Active-Backup-Modus)** unter Linux-Distributionen, die den **NetworkManager (nmcli)** verwenden. Das Tool bietet Menü-gesteuerte Optionen für Aktivierung, Diagnose und Konfiguration von Netzwerk-Schnittstellen.
 
 ---
