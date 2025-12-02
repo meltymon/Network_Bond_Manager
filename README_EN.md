@@ -1,5 +1,5 @@
 ---
-
+[![Deutsche Version](https://img.shields.io/badge/Sprache-Deutsch-blue)](README.md)
 ## 🇬🇧 Englische README.md (Für `README_EN.md`)
 
 ```
